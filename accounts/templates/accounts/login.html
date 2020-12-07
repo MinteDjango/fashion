@@ -1,0 +1,111 @@
+;<!doctype html>
+<html lang='en'>
+<head>
+<meta name="viewport" content="=device-, initial-scale=1, maximum-scale=1"/>
+<meta name="description" content="Login page">
+<title>profile</title>
+</head>
+<style>
+body{
+	background-color:#74396f;
+}
+*:focus {outline:none;}
+.nav{
+background-color:#74396f;
+border:none;
+display:block;
+overflow:hidden;
+margin:0;
+position:fixed;
+top:0;
+left:0;
+right:0;
+padding:3%;
+height:9%;
+}
+
+form{
+width:245px;
+margin:50px auto 50px auto;
+background-color:#fff;
+padding:10px;
+border-radius:2px;
+}
+input{
+border:1px solid #efefef;
+background-color:;
+border-radius:5px;
+width:210px;
+padding:8px;
+font-family:Roboto;
+font-weight:400;
+font-size:1em;
+color:#555;
+display:block;
+margin:40px auto 10px auto;
+}
+input[type=submit]{
+	background-color:#74396f;
+	border:none;
+	color:#efefef;
+}
+.crt-acc{
+	background-color:#fff;
+	text-align:center;
+}
+.command-link{
+	width:170px;
+	padding:8px;
+	display:block;
+	margin:20px auto;
+	text-align:center;
+	background-color:#74396f;
+	text-decoration:none;
+	color:#efefef;
+	font-weight:400;
+	font-family:Roboto;
+	font-size:1em;
+	border-radius:3px;
+}
+.footer{
+	text-align:center;
+}
+.footer-text{
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	font-weight:400;
+	font-family:monospace;
+	font-size:4vw;
+	margin:10%;
+	letter-spacing:px;
+}
+</style>
+<body style="margin:0;padding:0;">
+
+<form method="POST">
+    {% csrf_token %}
+	<div style="text-align:center;width:88%;padding:6%;background-color:#fff;">
+		<span style="font-family:Roboto;font-weight:900;font-size:8vw;color:#333;">Login</span>
+	</div>
+	{% for message in messages %}
+	    <span class="error">{{ message }}</span>
+	{% endfor %}
+	<input class="btn" type="text" placeholder="Username" name="username">
+	<input class="btn" type="password" placeholder="Password" name="password">
+	<input class="btn" type="submit" value="Login"/>
+	<div style="text-align:center;">
+	<a href="#">Forgot Password?</a>
+	</div>
+
+	<div class="crt-acc">
+		<a class="command-link" href="#">Create Account</a>
+	</div>
+</form>
+
+<div class="footer">
+	<div class="footer-legend">
+
+</div>
+</body>
+</html>

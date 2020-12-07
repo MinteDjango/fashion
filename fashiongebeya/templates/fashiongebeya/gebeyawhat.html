@@ -1,0 +1,94 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static '/styles/itmes.css' %}">
+<link rel="stylesheet" href="{% static '/styles/tops.css' %}">
+    <title>Fashion Gebeya</title>
+    <style>
+    body{
+    margin:0;
+    }
+    .trending{
+    font-family:"Raleway";
+    font-size:35px;
+    font-weight:700;
+    color:#666;
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <span class="brand">Fashion Gebeya</span>
+        	<a class="nav-top-link" href="{% url 'search' %}" style="float:right;margin:5px 20px 0 0;">
+	<svg width="25px" height="25px" viewBox="0 0 16 16" fill="#74396c">
+   <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+</svg>
+</a>
+
+<div class="navs">
+	<a href="{% url 'profile' %}" class="navs-link">
+	<svg width="25px" height="25px" viewBox="0 0 16 16" fill="#fff">
+       <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>
+</a>
+	<div class="navs-link">
+	<svg width="25px" height="25px" viewBox="0 0 16 16" fill="#fff">
+       <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+  <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+</svg>
+</div>
+	<a  href="{% url 'cart' %}" class="navs-link">
+	<svg width="25px" height="25px" viewBox="0 0 16 16" fill="#fff">
+       <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+</svg>
+</a>
+</div>
+    </div>
+
+    <div class="top">
+        <a href="{% url 'item' "shoes" %}" class="top-link">Shoes</a>
+        <a href="{% url 'item' "shirt" %}" class="top-link">Shirt</a>
+        <a href="{% url 'item' "jacket" %}" class="top-link">Jacket</a>
+        <a href="{% url 'item' "trouser" %}" class="top-link">Trouser</a>
+        <a href="{% url 'item' "other" %}" class="top-link">Other..</a>
+    </div>
+
+    <div style="text-align:right">
+    <a href="#" class="mycart-btn">My Wishlist</a>
+    </div>
+
+     <div style="margin-top:50px;text-align:center;">
+    <span class="trending">Trending Items</span>
+    </div>
+    {% for item in items %}
+    <div class="post">
+         <img src="{{ item.image.url }}" class="post-image">
+         <div class="post-footer">
+
+         <div style="text-align:center;padding-bottom:10px;">
+        <span class="item">{{ item.caption }}</span>
+    </div>
+
+
+         <div style="border:1px solid #eee;display:flex;">
+             <span class="price">{{ item.price }}</span>
+               <a href="#" class="buy-btn">Buy</a>
+          </div>
+
+          <div style="text-align:center;">
+             <div class="add-btn">Add to cart</div>
+              <div class="add-btn">Add to wishlist</div>
+         </div>
+
+         </div>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

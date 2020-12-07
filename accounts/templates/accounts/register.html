@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Fashion Gebeya Register</title>
+        <style>
+            body{
+                margin:0;
+            }
+            .top{
+                text-align:center;
+                padding:15px;
+            }
+            .description{
+                font-family:Roboto;
+                font-weight:900;
+                font-size:30px;
+                color:#000;
+            }
+            form{
+                width:250px;
+                margin:30px auto 30px auto;
+                background-color:#fff;
+                border:1px solid #efefef;
+                border-radius:3px;
+            }
+            input{
+                width:220px;
+                display:block;
+                margin:15px auto 15px auto;
+                padding:10px;
+                border:1px solid #efefef;
+                border-radius:3px;
+                color:#efefef;
+
+            }
+            input[type="submit"]{
+                background-color:#70396f;
+                border:none;
+                border-radius:3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <span class="description">Fashion Gebeya is online market made easy for you. Join today and purchase.</span>
+        </div>
+        <form method="POST">
+            {{ form }}
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>
